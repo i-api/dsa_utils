@@ -16,9 +16,20 @@ A collection of data structures and utilities for JavaScript.
         - peek_left()
 - range()
     - Works exactly like Python's range() function.
+- memoize(fn)
+    - returns a cached/memoized version of fn
 
 
-# Installation and Usage
+# Installtation and Usage: Deno
+```bash
+cat <<\EOF >> main.js
+import {Deque, Stack, range, memoize} from "https://deno.land/x/dsa_utils@v.0.0.1/main.js";
+console.log(Deque, Stack, range, memoize);
+EOF
+deno run main.js
+```
+
+# Installation and Usage: Node
 Run the following commands in your terminal:
 ``` zsh
 mkdir my_project; cd my_project;
@@ -28,11 +39,18 @@ npm pkg set scripts.test1="node main.js"
 npm install dsa_utils
 
 cat <<\EOF >> main.js
-import {Deque, Stack, range} from 'dsa_utils';
-console.log(Deque, Stack, range);
+import {Deque, Stack, range, memoize} from 'dsa_utils';
+console.log(Deque, Stack, range, memoize);
+EOF
 
+node main.js
+```
+
+## Deque demo
+```bash
+cat <<\EOF >> deque_test.mjs
+import {Deque, Stack, range, memoize} from 'dsa_utils';
 console.log("range(1, 3)", range(1, 13))
-
 let deque1 = new Deque([1, 2, 3]);
 console.log("deque1.__repr__()", deque1.__repr__()); // Deque([1, 2, 3])
 deque1.push(4);
@@ -44,8 +62,7 @@ console.log("deque1.__repr__()", deque1.__repr__()); // Deque([1, 2, 3])
 console.log("Object.getOwnPropertyNames(deque1)", Object.getOwnPropertyNames(deque1))
 console.log("Object.getOwnPropertyNames(Deque.prototype)", Object.getOwnPropertyNames(Deque.prototype))
 EOF
-
-node main.js
+node deque_test.mjs
 ```
 
 
