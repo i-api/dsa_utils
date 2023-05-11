@@ -1,0 +1,16 @@
+{
+  "name": "dsa_utils",
+  "version": "1.1.39",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test1": "node ./unit_tests/stack_unit_tests.js",
+    "test2": "node ./unit_tests/deque_unit_tests.js",
+    "test3": "node ./unit_tests/range_unit_tests.js"
+  },
+  "keywords": [],
+  "author": "Firstname",
+  "license": "ISC",
+  "type":"module"
+}
+
