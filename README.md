@@ -22,9 +22,9 @@ A collection of data structures and utilities for JavaScript.
 
 # Installation and Usage: Deno
 ```bash
-cat <<\EOF >> main.js
-import {Deque, Stack, range, memoize} from "https://deno.land/x/dsa_utils@v.0.0.1/main.js";
-console.log(Deque, Stack, range, memoize);
+cat <<\EOF > main.js
+import {Deque, Stack, range, memoize} from "https://deno.land/x/dsa_utils@v0.0.2.3/main.js"
+console.log(Deque, Stack, range, memoize)
 EOF
 deno run main.js
 ```
@@ -38,7 +38,7 @@ npm init -y; npm pkg set type="module";
 npm pkg set scripts.test1="node main.js"
 npm install dsa_utils
 
-cat <<\EOF >> main.js
+cat <<\EOF > main.js
 import {Deque, Stack, range, memoize} from 'dsa_utils';
 console.log(Deque, Stack, range, memoize);
 EOF
@@ -48,7 +48,7 @@ node main.js
 
 ## Deque demo
 ```bash
-cat <<\EOF >> deque_test.mjs
+cat <<\EOF > deque_test.mjs
 import {Deque, Stack, range, memoize} from 'dsa_utils';
 console.log("range(1, 3)", range(1, 13))
 let deque1 = new Deque([1, 2, 3]);
