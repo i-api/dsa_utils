@@ -20,7 +20,7 @@ A collection of data structures and utilities for JavaScript.
     - returns a cached/memoized version of fn
 
 
-# Installtation and Usage: Deno
+# Installation and Usage: Deno
 ```bash
 cat <<\EOF >> main.js
 import {Deque, Stack, range, memoize} from "https://deno.land/x/dsa_utils@v.0.0.1/main.js";
