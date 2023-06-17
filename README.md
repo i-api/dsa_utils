@@ -18,19 +18,24 @@ A collection of data structures and utilities for JavaScript.
     - Works exactly like Python's range() function.
 - memoize(fn)
     - returns a cached/memoized version of fn
+- properties 
+    - find all properties of an object, including inherited properties
+- protochain
+    - walks up the protochain
+- protochain_soft
+    - same as protochain but only lists "name" properties on objects
 
 
 # Installation and Usage: Deno
 ```bash
 cat <<\EOF > main.js
 import {Deque, Stack, range, memoize} from "https://deno.land/x/dsa_utils@v0.0.2.3/main.js"
-console.log(Deque, Stack, range, memoize)
+console.log(Deque, Stack, range, memoize, properties, protochain, protochain_soft)
 EOF
 deno run main.js
 ```
 
 # Installation and Usage: Node
-Run the following commands in your terminal:
 ``` zsh
 mkdir my_project; cd my_project;
 touch main.js
@@ -39,43 +44,18 @@ npm pkg set scripts.test1="node main.js"
 npm install dsa_utils
 
 cat <<\EOF > main.js
-import {Deque, Stack, range, memoize} from 'dsa_utils';
-console.log(Deque, Stack, range, memoize);
+import {Deque, Stack, range, memoize, properties, protochain, protochain_soft} from 'dsa_utils';
+console.log(Deque, Stack, range, memoize, properties, protochain, protochain_soft);
 EOF
 
 node main.js
 ```
 
-## Deque demo
-```bash
-cat <<\EOF > deque_test.mjs
-import {Deque, Stack, range, memoize} from 'dsa_utils';
-console.log("range(1, 3)", range(1, 13))
-let deque1 = new Deque([1, 2, 3]);
-console.log("deque1.__repr__()", deque1.__repr__()); // Deque([1, 2, 3])
-deque1.push(4);
-deque1.push_left(0);
-console.log("deque1.__repr__()", deque1.__repr__()); // Deque([0, 1, 2, 3, 4])
-deque1.pop();
-deque1.shift();
-console.log("deque1.__repr__()", deque1.__repr__()); // Deque([1, 2, 3])
-console.log("Object.getOwnPropertyNames(deque1)", Object.getOwnPropertyNames(deque1))
-console.log("Object.getOwnPropertyNames(Deque.prototype)", Object.getOwnPropertyNames(Deque.prototype))
-EOF
-node deque_test.mjs
-```
-
-
-<br/>
-<br/>
-<br/>
-<br/>
-
-# Sympathizing with new coders:
-- You must have node.js installed in order to run hello_world.js
+## Sympathizing with noobs:
+- You must have node.js installed in order to use this package
 - Install it via https://nodejs.org or via your favorite package manager, e.g. Homebrew
 
-# Notes on Package Managers:
+## Notes on Package Managers:
 - A package manager is like Apple's "App Store", but for programmers. 
 - https://brew.sh/ aka Homebrew, is a great package manager for Mac users
 - Homebrew is similar to Apple's "App Store", but better in every way.
@@ -86,7 +66,7 @@ node deque_test.mjs
 - Good luck!
 
 
-# Misc publish output:
+## Misc publish output:
 ``` zsh
 bash-3.2$ npm publish
 
