@@ -29,8 +29,7 @@ A collection of data structures and utilities for JavaScript.
 # Installation and Usage: Deno
 ```bash
 cat <<\EOF > main.js
-// import {Deque, Stack, range, memoize} from "https://deno.land/x/dsa_utils@v0.0.2.5/main.js"
-import {Deque, Stack, range, memoize} from "https://deno.land/x/dsa_utils/main.js"
+import {Deque, Stack, range, memoize, properties, protochain, protochain_soft} from "https://deno.land/x/dsa_utils/main.js" // "https://deno.land/x/dsa_utils@v0.0.2.5/main.js"
 console.log(Deque, Stack, range, memoize, properties, protochain, protochain_soft)
 EOF
 deno run main.js
